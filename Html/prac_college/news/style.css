@@ -1,0 +1,190 @@
+/* active cell class */
+        /* can do this to give precedence to it */
+        /* as it was getting subdued by the css for .cells below */
+        .active1.active1 {
+            flex-grow: 3;
+            border: 3px solid rgb(253, 118, 0);
+            background-color: rgb(53, 28, 5) !important;
+            /*can use this to give precedence to it*/
+            color: white;
+            padding: 20px;
+            transition: all 1s ease;
+        }
+
+
+
+        /* styling for the whole body */
+        body {
+            background-color: rgb(251, 210, 148);
+            font-family: 'Times New Roman';
+        }
+
+        /* the box containing the heading */
+        .headers {
+            display: inline;
+            margin: auto;
+            margin-left: 37.5%;
+        }
+
+        /* the heading */
+        .headers>h1 {
+            display: inline-block;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        .headers>img {
+            position: relative;
+            width: 10%;
+            z-index: -1;
+            top: 2vh;
+            left: 2vw;
+
+        }
+
+
+        /* contains the navbar */
+        .menubox {
+            border: transparent;
+            border-radius: 20px;
+            background-color: rgb(108, 59, 17);
+        }
+
+        /* content inside the navbar */
+        .menu {
+            /* this will make its childrens rowed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ul {
+                /* this will properly adjust the navbar withing the first ul i.e it will apply on the li tag inside ul */
+                /* for alignment , parent ul will be considered */
+                display: flex;
+                flex-direction: row;
+                justify-content: center; /*horizontal alignment (in case of row)*/
+                align-items: center;    /*vertical alignment (in case of row)*/
+            }
+
+            li {
+                list-style: none;
+                margin-left: 10px;
+                padding: 10px;
+                border: 1px solid transparent;
+                border-radius: 13px;
+            }
+
+            .log {
+                /* second ul tag */
+                display: flex;
+                position: absolute;
+                /*(position of the whole box of log )so as to move it*/
+                right: 50px;
+
+                li {
+                    background-color: rgb(159, 91, 35);
+                }
+                
+            }
+            .log>li:hover{
+                background-color: rgb(66, 34, 7);
+            }
+            .info {
+                /* second ul tag */
+                display: flex;
+                position: absolute;
+                /*(position of the whole box of log )so as to move it*/
+                left: 2px;
+
+                li {
+                    padding: 12px;
+                    background-color: rgb(104, 47, 0);
+                    color: bisque;
+                    font-size: 13px;
+                }
+            }
+
+            li:hover {
+                background-color: rgb(159, 91, 35);
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+        }
+
+
+
+
+        /* contains all rows */
+        #main {
+            display: flex;
+            justify-content: center;    /* vertical alignment (in case of col)*/
+            align-items: center;    /*horizontal alignment (in case of col)*/
+            flex-direction: column; 
+            /* this sets all rows column wise */
+        }
+
+
+        /* styling for all the rows in the website */
+        .rows {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            /* this is helping to keep the items(cells) the same size (even after flex-growing)*/
+        }
+
+
+        /* main cells in each row */
+        .cells {
+            /* can also select using .row>div{} */
+            /* cells */
+            display: flex;
+            flex-direction: column;
+            /*Initial flex*/
+            flex: 1;
+            /* flex:1 1 auto;  this is short hand .... can take values for flex-grow, flex-shrink, flex-basis together*/
+            border: 1.3px solid black;
+            border-radius: 20px;
+            margin: 2px;
+            padding: 5px;
+            background-color: rgb(230, 183, 113);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .cells:hover {
+            background-color: rgb(182, 105, 42);
+            color: white;
+            box-shadow: 0 20px 20px rgb(0, 0, 0);
+            z-index: 2;
+        }
+
+
+        /* news details */
+        .rows>div>img {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 150px;
+            margin: auto;
+            padding: 1px;
+            border: 2px solid brown;
+        }
+
+        .head {
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        .head:hover {
+            color: beige;
+        }
+
+        .content {
+            display: none;
+        }

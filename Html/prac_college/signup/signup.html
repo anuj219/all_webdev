@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* error styling */
+        .error {
+            border: 0.2vw solid red;
+            border-radius: 30px;
+        }
+
+        /* correct styling */
+        .correct {
+            border: 0.2vw solid rgb(57, 245, 40);
+            border-radius: 2px;
+        }
+
+        /* styling of the FA font awesomes */
+        .fa-user,
+        .fa-key {
+            position: relative;
+            color: rgb(205, 134, 134);
+        }
+
+        #eyes_pass {
+            color: #cd8686;
+        }
+
+        #eyes_conf {
+            color: #cd8686;
+        }
+
+        /* styling for main */
+        
+        .main {
+            background-color: rgb(49, 16, 16);
+            width: 400px;
+            height: 450px;
+            margin: auto;
+            padding: 15px;
+            border: 5px solid rgb(205, 134, 134);
+            border-radius: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        /* styling for the input options .. grouping the rowed elements so as to align them together in a row */
+        .input1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            /*center also works ... but i needed some space between the icons and the input box , but this changes the alignement of sign up button*/
+            /* So ill be giving justify content: center to sign up button seperately*/
+            width: 270px;
+            position: relative;
+        }
+
+        /* Styling for the content inside main */
+        #head {
+            color: rgb(255, 181, 91);
+            text-align: center;
+            font-family: cursive;
+            z-index: 1;
+        }
+        #spilled{
+            z-index: 0;
+            width: 255px;
+            top: 20px;
+            margin-right: 30px;
+            transform: rotate(-11deg);
+            position: absolute;
+            opacity: 0.6;
+        }
+
+
+        #sub {
+            padding: 10px;
+            border-radius: 30px;
+            width: 150px;
+            background-color: rgb(205, 134, 134);
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            border: 2px solid transparent;
+
+        }
+
+        #input1 {
+            /* CSS for sign up button ... see reason in .input1 styling */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #sub:hover {
+            background-color: rgb(253, 253, 253);
+            color: rgb(109, 72, 72);
+            box-sizing: border-box;
+            box-shadow: 0 14px 20px rgb(78, 60, 60);
+        }
+
+        #name {
+            margin-right: 43px;
+        }
+
+        #name,
+        #pass,
+        #cpass {
+            /* margin: 0px 8px; */
+            padding: 10px;
+            border-radius: 30px;
+            transition: background-color 0.5s ease;
+        }
+
+        #name:hover,
+        #pass:hover,
+        #cpass:hover {
+            background-color: rgb(220, 188, 188);
+            border-radius: 50px;
+            box-sizing: border-box;
+            box-shadow: 0 14px 10px black;
+        }
+
+        /* the or division */
+        span {
+            color: white;
+        }
+
+        .div_line {
+            margin-top: 20px;
+            width: 100vw;
+        }
+
+        /*other options styling */
+        .other_login {
+            /* button */
+            cursor: pointer;
+            width: 58%;
+            background-color: transparent;
+        }
+
+        #google_img {
+            /* google image */
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #button_google {
+            cursor: pointer;
+            background-color: #1d0606;
+            border: 1px transparent solid;
+            border-radius: 15px;
+        }
+
+        #button_google:hover {
+            background-color: rgb(81, 38, 38);
+        }
+
+        /*-----------------------------------------------------------------------*/
+        /* If one more option you want to add ... eg apple */
+        #apple_img {
+            /* google image */
+            cursor: pointer;
+            width: 90%;
+        }
+
+        #button_apple {
+            cursor: pointer;
+            background-color: #1d0606;
+            border: 1px transparent solid;
+            border-radius: 15px;
+        }
+
+        #button_apple:hover {
+            background-color: rgb(81, 38, 38);
+        }
+
+
+
+        /* .togg_pass {
+            position: relative;
+            left: 200px;
+        } */
+    </style>
+</head>
+
+<body>
+    <form action="" class="form">
+        <div class="main">
+            <div id="head">
+                <h1>Heaven Hood</h1>
+            </div>
+            <div id="input1"><img src="s2.png" alt="coffee_spill_background" id="spilled"></div>
+            <div class="input1">
+                <label for="name"><i class="fas fa-user"></i></label>
+                <input type="text" name="name" id="name" placeholder="Username or Email" required>
+            </div>
+            <br>
+            <div class="input1">
+                <label for="pass"><i class="fas fa-key"></i></label>
+                <input type="password" name="password" id="pass" onclick="check_name()" placeholder="Enter Password">
+                <i id="eyes_pass" class="fas fa-eye-slash" onclick="toggle()"></i>
+            </div>
+            <br>
+            <div class="input1">
+                <label for="cpass"><i class="fas fa-key"></i></label>
+                <input type="password" name="confirm_password" id="cpass" onclick="check_pattern()"
+                    placeholder="Confirm Password">
+                <i id="eyes_conf" class="fas fa-eye-slash" onclick="toggle_conf()"></i>
+            </div>
+            <br>
+            <div class="input1" id="input1">
+                <input type="submit" id="sub" onclick="return check_password()" value="SIGN UP">
+            </div>
+            <div class="input1">
+                <hr style="width: 41%; display: inline-block;"><span> OR </span>
+                <hr style="width: 41%; display: inline-block;">
+            </div>
+            <div class="input1 other_login">
+                <button type="button" onclick="" id="button_google"><img id="google_img" src="g5.png"></button>
+            </div>
+            <!-- <div class="input1 other_login">
+                <button type="button" onclick="" id="button_apple"><img id="apple_img" src="a3.png"></button>
+            </div> -->
+        </div>
+    </form>
+
+
+
+    <!-- It was not loading properly when written inside head -->
+    <script>
+        var pass = document.getElementById('pass');
+        var conf_pass = document.getElementById('cpass');
+        var name1 = document.getElementById('name');
+
+        // function to check pattern matching for password
+        function check_pattern() {
+            //var pattern = /^230[5-6]{1}0[0-9]{2}$/;
+            var pattern = /^@\w+\w+@$|^\w*@\w*$/;
+            // will allow user to have a password that includes  @ anywhere
+            if (!pattern.test(pass.value.trim())) {
+                pass.classList.remove('correct');
+                pass.classList.add('error');
+                return false;
+            }
+            else {
+                pass.classList.add('correct');
+                pass.classList.remove('error');
+            }
+        };
+
+        // function to check if password and confirmed passwords match
+        function check_password() {
+            if (pass.value.trim() != conf_pass.value.trim()) {
+                alert("Passwords dont match");
+                return false;
+            }
+        };
+
+        //function to check user name
+        function check_name() {
+            var pattern = /^[a-z][a-z0-9._]{3,}$/;
+            if (!pattern.test(name1.value.trim())) {
+                name1.classList.remove('correct');
+                name1.classList.add('error');
+                return false;
+            }
+            else {
+                name1.classList.remove('error');
+                name1.classList.add('correct');
+                //name1.classList.replace('error','correct')  -- this also works fine, but if user entered right input in first go .. it wont find an error class to replace ... so wont work then
+            }
+        }
+
+        // function to toggle visibility of password
+        function toggle() {
+            var eyes = document.getElementById('eyes_pass');
+            if (pass.type == 'password') {
+                pass.type = 'text';
+                // if its on type text --> show slashed eye icon (to give button for changing type back to password)
+                eyes.classList.add('fa-eye');
+                eyes.classList.remove('fa-eye-slash');
+
+            }
+            else {
+                pass.type = 'password';
+                // if its on type password --> show eye icon (to give button for changing type to text)
+                eyes.classList.remove('fa-eye');
+                eyes.classList.add('fa-eye-slash');
+
+            }
+        };
+
+        // function to toggle visibility of confirm password
+        function toggle_conf() {
+            var eyes = document.getElementById('eyes_conf');
+            if (conf_pass.type == 'password') {
+                conf_pass.type = 'text';
+                eyes.classList.add('fa-eye');
+                eyes.classList.remove('fa-eye-slash');
+            }
+            else {
+                conf_pass.type = 'password';
+                eyes.classList.remove('fa-eye');
+                eyes.classList.add('fa-eye-slash');
+            }
+        };
+    </script>
+
+</body>
+
+</html>

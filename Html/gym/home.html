@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <style>
+        /*  kisi tag ko relative set karne se wo sab abosultes ka parent nahi ban jata */
+        /* Agar header class css nahi hota then all elements wouldve been respecting to position of nearest parent of each */
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100px;
+            background-image: url('gym.jpeg');
+        }
+
+        .header {
+            position: relative;
+            top: 12px;
+            /* This sets header to be the parent and have its own position ,,, all subclasses/elements will have their position with respect to this tag  */
+        }
+
+        .left {
+            font-size: 13px;
+            position: absolute;
+            /* This is is a position respective to that of nearest parent (i.e header here) */
+            /* Same for right class */
+
+            right: 90%;
+            top: 10%;
+            display: block;
+        }
+
+        .mid {
+            /* padding ambiguos ... try border and see*/
+            position: relative;
+            top: 10px;
+            display: block;
+            width: 50%;
+            margin: 20px 350px;
+            /*border:2px solid rgb(0, 255, 102);*/
+        }
+
+        .right {
+            font-size: 13px;
+            position: absolute;
+            left: 87%;
+            top: 40%;
+            display: inline-block;
+        }
+
+
+
+        .navbar li {
+            display: inline-block;
+        }
+
+        .navbar li a {
+            color: white;
+            padding: 34px 19px;
+            text-decoration: overline;
+        }
+
+        .navbar li a:hover {
+            text-decoration: none;
+            color: rgb(124, 124, 124);
+        }
+
+        .navbar .active {
+            text-decoration: none;
+        }
+
+
+        .btn {
+            margin: auto;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom: 195px;
+            border: 1.5px solid rgb(39, 39, 39);
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(28, 27, 27);
+        }
+
+        .form-group input {
+            text-align: center;
+            display: block;
+            width: 50%;
+            padding: 1px;
+            border: 2px solid black;
+            margin: 11px auto;
+            font-size: 25px;
+            border-radius: 8px;
+        }
+
+        .container {
+            position: relative;
+            border: 2px solid white;
+            border-radius: 28px;
+            margin: auto;
+            padding: 10px 75px;
+            width: 42%;
+        }
+
+        .container h1 {
+            color: white;
+            text-align: center;
+        }
+
+        .btn1 {
+            position: absolute;
+            top: 382px;
+            display: block;
+            width: 74%;
+            margin: 27px auto;
+            background-color: black;
+            color: white;
+            border: 1px solid;
+            cursor: pointer;
+            padding: 3px;
+        }
+
+        .btn1:hover {
+            background-color: rgb(42, 42, 42);
+        }
+
+        .left img {
+            position: absolute;
+            top: -62px;
+            left: -83px;
+        }
+
+        #gen {
+            border: 2px solid black;
+            margin-left: 131px;
+            font-size: 23px;
+            color: rgb(117, 117, 117);
+            padding: 3px 52px;
+            border-radius: 8px;
+        }
+        body{
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function pattern() {
+            var user_email = document.getElementById('email');
+            var pattern = /^[^ ]+@[^ ]+\.+[a-z]{2,3}$/;   // this is known as regular expression or REGEX
+            // [^ ]+ matches one or more char except space
+            // @ means user has put @ between the two expressions
+            // Without escaping (\), the dot((.) would match any character, so to match it with only . literal we use \
+            // the ^ and $ at the ends tell that pattern should matcch from the start^ till the end$
+
+            var user_num = document.getElementById('num');
+            var pattern_num = /^[1-9][0-9]{9}$/; // this means\
+            //                  the first digit has to be between 1-9 only and the next 9 digits can be between 0-9
+
+            if (!pattern.test(user_email.value.trim())) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <li><a href="#"><img src='wadapav.png' width="60"></a></li>
+        </div>
+
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <button class="btn">
+                Call us
+            </button>
+            <button class="btn">
+                Mail us
+            </button>
+        </div>
+        <div class="container">
+            <h1>Join the best gym of Delhi now</h1>
+            <form action="noaction.php" class="forms" onsubmit="return pattern()">
+                <div class="form-group">
+                    <input type="text" name="" placeholder="Enter your Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="Enter your Age">
+                </div>
+                <div class="form-group">
+                    <select name="gender" id="gen" placeholder="enter your Gender">
+                        <option value="D" disabled selected> Enter Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="Enter your Locality">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="em" placeholder="Enter your Email Id" id="email">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="num" name="" placeholder="Enter your Phone Number">
+                </div>
+                <button class="btn1">Submit</button>
+                <!-- When you place a <button> inside a <form>, 
+                it defaults to type="submit" unless you explicitly set it to another type, such as type="button" -->
+            </form>
+
+    </header>
+</body>
+
+</html>

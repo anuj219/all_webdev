@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function calc() {
+            var name = document.getElementById("txtUsername");
+            var length = name.value.trim().length;
+            var base = 50 * length;
+            var choice = document.getElementById("choice");
+            var cont = document.getElementById('small');
+            var gst1 = 0;
+            if (choice.value === "Wooden") {
+                gst1 = base * 0.12;
+                base = base + base * 0.12;
+            }
+            else {
+                gst1 = base * 0.18;
+                base = base + base * 0.18;
+            }
+
+            const resultBox = document.getElementById('small');
+            resultBox.innerHTML =
+                "<h3>Input: " + name.value + "</h3>"+
+                "<h3>Material: " + choice.value + "</h3>"+
+                "<h3>Character Count: " + length + "</h3>"+
+                "<h3>Gross Price " + (base-gst1) + "</h3>"+
+                "<h3>GST: Rs. " + gst1 + "</h3>"+
+                "<h2 id='price'>Total Price: " + base + "</h2>";
+
+            document.getElementById('small').classList.add('marg');
+
+        }
+    </script>
+    <title>
+        Signup
+    </title>
+    <style>
+        form input {
+            align-items: center;
+            width: 50%;
+            height: 40px;
+            border-radius: 8px;
+            outline: none;
+            border: 2px solid #c4c4c4;
+            padding: 0 30px;
+            box-shadow: 1px 9px 26px rgba(0, 0, 0, 1.2);
+
+        }
+
+        form {
+            transform: translateX(25%);
+            background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        .butt {
+            cursor: pointer;
+            padding: 14px;
+            width: 19%;
+            color: blue;
+            box-shadow: 0px 10px 15px 0px rgb(0, 0, 0, 1.5);
+            border-radius: 10px;
+        }
+
+        select {
+            padding: 8px 19px;
+            box-shadow: 0px 10px 15px 0px rgb(0, 0, 0, 1.5);
+            border-radius: 10px;
+        }
+
+        #label {
+            background-color: rgb(176, 109, 239);
+            border-radius: 10px;
+            width: 139px;
+            text-align: center;
+            box-shadow: 0px 10px 15px 0px rgb(0, 0, 0, 1.5);
+            margin-bottom: 10px;
+        }
+        #price{
+            background-color: rgb(176, 109, 239);
+            border-radius: 10px;
+        }
+        #f1{
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+    <form id="f1" method="get" name="form1">
+        <label for="txtUsername" id="label">Name </label>
+        <input type="text" id="txtUsername" placeholder="Username"> <br>
+        <select id="choice" placeholder="Select type">
+            <option value="Wooden">
+                wooden
+            </option>
+            <option value="Metal">
+                metal
+            </option>
+        </select><br>
+        <button class="butt" type="button" value="calculate" onclick="calc();"> Calculate </button>
+        <h1> Bill Details! </h1>
+        <small id="small">
+            <!-- on click,, all the bill detials will be displayed ... all neccessary html code for that will be added to this element's content using innerHTML -->
+        </small>
+    </form>
+    </div>
+</body>
+
+</html>

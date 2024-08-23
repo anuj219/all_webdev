@@ -1,0 +1,219 @@
+<!-- problems faced :  -->
+
+<!-- tranisiton is not applying to the .cells for flex-grow !!!! solved idk how!!!!! -->
+<!-- its because flex-grow is not applied to .cells -- as .cells is not displayed as flex -->
+<!-- and if i change .cells to flex, all items inside .cells are getting flex row direction, which i dont want -->
+<!-- ohh bhai .. it striked me, agar sab items inside cells are getting rowed, i changed the flex-direction to column and shit ... it worked, got the required layout  -->
+<!-- but bhai transition abhi bhi kaam nhi kar rha wtf -->
+<!-- transition kaam kar rha hai kaise to -->
+<!-- and to be honest, i dont see the difference between using flex-grow and not using it -->
+<!-- fuck chal gaya flex-grow, lets go ... flex-grow was applied to .rows , instead of .cells (individual cells) -->
+<!-- so apply flex:1(i.e flex-grow 1) to all cells using .cells .. and when they are clicked, apply flex:3 to the clicked one using .active css-->
+<!-- and why flex:3 and not any other number - because apne row me 3 cell hai, so were telling it to give the max size to the clicked one, and other two ko remaining size in equal proportions -->
+<!-- flex-grow ke bina, cell only takes as much plac as the content needs ... so if one cell has more content, it would have occupied more space -->
+
+<!-- image sizes are different, so they come on the web-page in different sizes !!!!solved (using px got consistency in all images)!!!!! -->
+<!-- but doing px in images, after clicking a cell, they remain of the same size... i want them to increase ... i even tried putting % when they were clicked (using jquery .css) and when clicked back , make it 300px again ... but it wasnt working properly -->
+
+<!-- images are not aligning in center of the cells  !!!!solved (using margin-auto ... but i wanted to do it using flex) !!!! -->
+
+<!-- heading is not coming justified -->
+
+<!-- unable to get login page on the button click ... the signup page i made ...  -->
+
+
+<!-- new tag : 
+date_time1
+precedence (.active1.active1)
+transtion
+
+imp code : 
+jquery
+flex-grow -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="script.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="date_time1()">
+    <div class="headers">
+        <img src="n1.png" alt="news_logo">
+        <h1>BITNEWS</h1>
+    </div>
+    <br>
+    <hr size="2" color="black">
+    <div class="menubox">
+        <div class="menu">
+            <ul class="info">
+                <li>DATE : <small id="date"></small></li>
+                <li>TIME : <small id="time"></small></li>
+            </ul>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">LIVE</a></li>
+                <li><a href="#">LATEST</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            <ul class="log">
+                <li><a href="http://127.0.0.1:5500/web_dev/Html/prac_college/signup/signup.html">LOGIN</a></li>
+                <li><a href="home.html">SIGN UP</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <hr size="4" color="black">
+
+    <div id="main">
+        <div id="row1" class="rows">
+            <div id="cell1" class="cells">
+                <img src="soldiers.jpg" alt="News Image 1">
+                <h3 id="head3" class="head">2 Soldiers Killed In Gunfight With Terrorists In J&K's Anantnag</h3>
+                <div id="content1" class="content">Srinagar: Two soldiers were killed in action during a fierce
+                    gunbattle with terrorists
+                    in Jammu and Kashmir's Anantnag district today. A soldier and two civilians were injured.
+                    The police said the encounter began in Anantnag district's Ahlan Gadole this afternoon.
+                    Terrorists targeted the army patrol while they were carrying out an anti-terror operation in the
+                    forest in the Kokernag subdivision.</div>
+            </div>
+
+            <div id="cell2" class="cells">
+                <img src="adani.jpeg" alt="News Image 1">
+                <h3 id="head2" class="head">Adani Group, SEBI Chief, Industry Leaders Slam "Discredited" Hindenburg</h3>
+                <div id="content2" class="content">
+                    The Adani Group today refuted the latest allegations by Hindenburg Research as "malicious,
+                    mischievous and manipulative selections of
+                    publicly available information" to arrive at "predetermined conclusions for personal profiteering
+                    with wanton disregard for facts and the law".
+                    In a stock exchange filing, the Adani Group completely rejected these allegations "which are a
+                    recycling of discredited claims that have been
+                    thoroughly investigated,
+                    proven to be baseless and already dismissed by the Honourable Supreme Court in January 2024".
+                </div>
+            </div>
+
+            <div id="cell3" class="cells">
+                <img src="modi.jpg" alt="News Image 1">
+                <h2 id="head1" class="head">PM Modi releases 109 climate-resilient seed varieties to boost farm yield,
+                    nutrition</h2>
+                <div id="content3" class="content">
+                    The field crop varieties include cereals, millets, forage crops, oilseeds, pulses, sugarcane,
+                    cotton, and fiber crops. For horticulture,
+                    the Prime Minister released new varieties of fruits, vegetables, plantation crops, tubers, spices,
+                    flowers, and medicinal plants.
+                    Since 2014, Mr. Modi has advocated for sustainable farming practices and climate-resilient
+                    methodologies to bolster farmers' income.
+                    He has consistently emphasized the promotion of biofortified crop varieties, linking them to
+                    government initiatives like the Mid-Day
+                    Meal scheme and Anganwadi services to combat malnutrition in India.
+                </div>
+            </div>
+        </div>
+        <!--  end of row 1 -->
+
+
+        <!-- start of row 2 -->
+        <div id="row2" class="rows">
+            <div id="cell1" class="cells">
+                <img src="s9.jpeg" alt="News Image 1">
+                <h3 id="head3" class="head"> Maharashtra CM Eknath Shinde hoists national flag at Mantralaya on
+                    Independence Day</h3>
+                <div id="content1" class="content">Srinagar: Two soldiers were killed in action during a fierce
+                    gunbattle with terrorists
+                    in Jammu and Kashmir's Anantnag district today. A soldier and two civilians were injured.
+                    The police said the encounter began in Anantnag district's Ahlan Gadole this afternoon.
+                    Terrorists targeted the army patrol while they were carrying out an anti-terror operation in the
+                    forest in the Kokernag subdivision.</div>
+            </div>
+
+            <div id="cell2" class="cells">
+                <img src="rick.jpeg" alt="News Image 1">
+                <h3 id="head2" class="head">Auto driver sleeping on Versova beach crushed to death as SUV runs over him, friend injuredg</h3>
+                <div id="content2" class="content">
+                    Months after the Worli hit-and-run case, a similar incident of reckless driving took place in Mumbai, where an auto driver was crushed to death on Versova beach after an SUV ran over him.
+
+Another person was also injured in the incident which took place on August 12.
+
+The deceased and the injured person have been identified as auto driver Ganesh Vikram Yadav and delivery boy Bablu Shrivastava, respectively. According to an Indian Express report, Yadav was sleeping on the Andheri-Versova beach with his friend Bablu Shrivastava to avoid the hot weather.
+                </div>
+            </div>
+
+            <div id="cell3" class="cells">
+                <img src="rathee.jpeg" alt="News Image 1">
+                <h2 id="head1" class="head">Kolkata rape-murder case: YouTuber Dhruv Rathee under fire for his social media post; here's why</h2>
+                <div id="content3" class="content"> YouTuber and Influencer Dhruv Rathee faced criticism after disclosing the name of the victim in the case involving the raped and murdered RG Kar Hospital doctor.
+                    On August 9, a post-graduate trainee doctor was found dead in the seminar hall of RG Kar Medical College and Hospital in Kolkata. The victim's family has alleged that she was raped and murdered. This incident has triggered a nationwide protest by doctors and medical fraternities.
+                </div>
+            </div>
+        </div> <!-- end of row2-->
+
+        <!-- start of row3 -->
+        <div id="row3" class="rows">
+            <div id="cell1" class="cells">
+                <img src="soldiers.jpg" alt="News Image 1">
+                <h3 id="head3" class="head">2 Soldiers Killed In Gunfight With Terrorists In J&K's Anantnag</h3>
+                <div id="content1" class="content">Srinagar: Two soldiers were killed in action during a fierce
+                    gunbattle with terrorists
+                    in Jammu and Kashmir's Anantnag district today. A soldier and two civilians were injured.
+                    The police said the encounter began in Anantnag district's Ahlan Gadole this afternoon.
+                    Terrorists targeted the army patrol while they were carrying out an anti-terror operation in the
+                    forest in the Kokernag subdivision.</div>
+            </div>
+
+            <div id="cell2" class="cells">
+                <img src="adani.jpeg" alt="News Image 1">
+                <h3 id="head2" class="head">Adani Group, SEBI Chief, Industry Leaders Slam "Discredited" Hindenburg</h3>
+                <div id="content2" class="content">
+                    The Adani Group today refuted the latest allegations by Hindenburg Research as "malicious,
+                    mischievous and manipulative selections of
+                    publicly available information" to arrive at "predetermined conclusions for personal profiteering
+                    with wanton disregard for facts and the law".
+                    In a stock exchange filing, the Adani Group completely rejected these allegations "which are a
+                    recycling of discredited claims that have been
+                    thoroughly investigated,
+                    proven to be baseless and already dismissed by the Honourable Supreme Court in January 2024".
+                </div>
+            </div>
+
+            <div id="cell3" class="cells">
+                <img src="modi.jpg" alt="News Image 1">
+                <h2 id="head1" class="head">PM Modi releases 109 climate-resilient seed varieties to boost farm yield,
+                    nutrition</h2>
+                <div id="content3" class="content">
+                    The field crop varieties include cereals, millets, forage crops, oilseeds, pulses, sugarcane,
+                    cotton, and fiber crops. For horticulture,
+                    the Prime Minister released new varieties of fruits, vegetables, plantation crops, tubers, spices,
+                    flowers, and medicinal plants.
+                    Since 2014, Mr. Modi has advocated for sustainable farming practices and climate-resilient
+                    methodologies to bolster farmers' income.
+                    He has consistently emphasized the promotion of biofortified crop varieties, linking them to
+                    government initiatives like the Mid-Day
+                    Meal scheme and Anganwadi services to combat malnutrition in India.
+                </div>
+            </div>
+        </div> <!--  end of row 3 -->
+    </div> <!-- end of main-->>
+</body>
+
+</html>

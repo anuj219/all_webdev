@@ -1,0 +1,106 @@
+<!Doctype html>
+<html>
+<!-- External JavaScript-->
+<head>
+    <title> Contact </title>
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <style>
+        h1{
+            text-align: center;
+            background-color: darkblue;
+            color: burlywood;
+        }
+        .forms {
+            text-align: center;
+            background-color: aqua;
+        }
+        .active{
+            color: blanchedalmond;
+        }
+        .forms input{
+        }
+        .forms label{
+        }
+        
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 1.0 = which means no zoom-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body class="body">
+    <h1 id="main_head"> Contact.Anuj_Mehta
+    </h1>
+    <hr size="4%" style="margin: -10px; background-color: rgb(6, 2, 19);">
+    <div>
+        <!-- navbar -->
+        <ul>
+            <!-- this /ul style="display: inline; list-style: none;"/ is wrong as display inline is getting applied to whole group and does not affect individual list items-->>
+            <li><a href="resume_prac_2106.html"><img class="wadapav-img" src="wadapav.png" alt="wadapav image"></a></li>
+
+            <!--style="opacity: 0.7;"    can use this to change tranparency-->
+            <li class="navbar"><a class="navbar-link" href="resume_prac_2106.html">Home</a></li>
+            <li class="navbar"><a class="navbar-link" href="about.html">about</a></li>
+            <li class="navbar"><a class="navbar-link" href="qualification.html">Qualification</a></li>
+            <li class="navbar"><a class="navbar-link" href="projects.html">Projects</a></li>
+            <li class="navbar"><a class="navbar-link active" href="contact.html">Contact</a></li>
+            <li class="navbar"><a class="navbar-link" href="https://youtube.com/shorts/SXHMnicI6Pg?si=ndys4OAz-oCbxfxL"><img class="yt" src="youthoob-removebg-preview.png" alt="youthoob"></a></li>
+
+        </ul>
+    </div>  
+    <h1>Greetings! Please Be sure to fill all the mandatory details.</h1>
+    <div>
+        <form action="insert.php" method="get" class="forms">
+            <!--http://127.0.0.1:5500/Codes/Web%20dev/Html/resume%20project/insert.php?Name=sds&Mob_no=34384&email=sdcsd%40gmail.com&date=2024-06-12&checkbox1=check&submit+button=submit+details-->
+            <label for="Name">Name: </label>
+            <input type="text" name="Name" placeholder="Rohit Sharma" id="Name"><br>
+
+            <label for="Mob">Mobile Number: </label>
+            <input type="number" name="Mob_no" placeholder="6969696969" id="Mob"><br>
+
+            <label for="email"> Valid Email:</label>   <!-- has auto validation (checks @,pattern etc)-->   
+            <input type="email" name="email" placeholder="wadapav99@indiancricketteam.in" id="email" required autocomplete="off" list="emailDomains"><br>
+            <datalist id="emailDomains">
+                <option value="gmail.com">
+                <option value="yahoo.com">
+                <option value="outlook.com">
+                <!-- Add more domain options as needed -->
+            </datalist>
+
+            <label for="date1">Date of Meet: </label>
+            <input type="date" name="date" id="date1"><br>
+
+            <label for="time">Preferred Time (IST) :</label>
+            <select multiple size="2" id="time" name="checkbox">
+                <option value="morn">9 am</option>
+                <option value="noon">2 pm</option>
+                <option value="eve">7 pm</option>
+            </select><br>
+
+            <label for="check">Subscribe!</label>
+            <input type="checkbox" value="check" name="checkbox1" id="check" checked><br>
+            <!-- keeps the box checked by default, can also be applied to radio button -->
+
+            <label for="pin"> password</label>
+            <input type="password" name="pin" id="pin" >
+            <label for="chk">Show Password</label>
+            <input type="checkbox" id="chk" onclick="toggPass()"> <br>
+            
+            <input type="password1" name="pin1" id="pin1" >
+            <label for="chk1">Confirm Password</label>
+            <input type="checkbox" id = "chk1" onclick="confPass()"><br>
+            
+            
+            <input type="submit" value="submit details" name="submit button">
+            <input type="reset" name="clear" >
+
+
+        </form>
+        <script src = "script.js"> </script>
+
+</body>
+
+
+</html>

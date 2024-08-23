@@ -1,0 +1,98 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Resume </title>
+    <link rel="stylesheet" href="css.css" type="text/css">
+
+    <style>
+        .rohit {
+            border-radius: 20px;
+            float: left;
+            margin-right: 20px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .headers {
+            position: absolute;
+            background-color: aqua;
+            border-radius: 20px;
+            padding: 56px;
+            padding-bottom: 65px;
+            padding-top: 56px;
+            float: right;
+            width: 20vw;
+            right: 600px;
+            top: 216px;
+            z-index: 0;
+            text-align: center;
+            list-style: none;
+
+        }
+
+        .headers li {
+            display: block;
+        }
+
+        .info {
+            position: relative;
+            bottom: 16px;
+            background-color: rgb(18, 140, 227);
+            border-radius: 20px;
+            padding: 4rem 18rem;
+            padding-bottom: 56px;
+            padding-left: 300px;
+            float: right;
+            width: 100px;
+            z-index: 0;
+        }
+        .active{
+            color: blanchedalmond;
+        }
+        
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 1.0 = which means no zoom-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body class="body">
+    <h1 id="main_head"> Resume.Anuj_Mehta
+    </h1>
+    <hr size="4%" style="margin: -10px; background-color: rgb(6, 2, 19);">
+    <div>
+        <!-- navbar -->
+        <ul class="navbar_whole">
+            <!-- this /ul style="display: inline; list-style: none;"/ is wrong as display inline is getting applied to whole group and does not affect individual list items-->>
+            <li><a href="resume_prac_2106.html"><img class="wadapav-img" src="wadapav.png" alt="wadapav image"></a></li>
+
+            <!--style="opacity: 0.7;"    can use this to change tranparency-->
+            <li class="navbar"><a class="navbar-link active" href="resume_prac_2106.html">Home</a></li>
+            <li class="navbar"><a class="navbar-link" href="about.html">about</a></li>
+            <li class="navbar"><a class="navbar-link" href="qualification.html">Qualification</a></li>
+            <li class="navbar"><a class="navbar-link" href="projects.html">Projects</a></li>
+            <li class="navbar"><a class="navbar-link" href="contact.html">Contact</a></li>
+            <li class="navbar"><a class="navbar-link" href="https://youtube.com/shorts/SXHMnicI6Pg?si=ndys4OAz-oCbxfxL"><img class="yt" src="youthoob-removebg-preview.png" alt="youthoob"></a></li>
+
+            <!-- <input type="search" name="search" id="search" placeholder="SEARCH">    gives a search box (but    im not able to move it)) -->
+        </ul>
+    </div>
+    <img class="rohit" src="rohit.jpeg" width="30%" height="240px" alt="Anuj Mehta">
+    <p>
+    <ul class="headers">
+        <li>Name</li>
+        <li>Gender</li>
+        <li>Age</li>
+    </ul>
+    <ul class="info">
+        <li>Anuj</li>
+        <li>Male</li>
+        <li>18</li>
+    </ul>
+    </p>
+</body>
+
+</html>

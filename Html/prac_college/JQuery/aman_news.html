@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Bytes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="news.css">
+    <style>
+        
+        .news {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            text-align: center;
+            height: 100%;
+            width: 90%;
+        }
+
+        .news img:hover {
+        
+            transform: scale(1.1); 
+
+        }
+
+        .news:hover{
+            h3{
+                text-decoration: underline;
+            }
+        }
+
+        h3 {
+            text-align: justify;
+            width: 300px;
+            margin-top: 3%;
+            height: 25%;
+            font-size: 20px;
+        }
+
+        h1 {
+        
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0 auto;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            margin-left: 33%;
+            width: fit-content;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        p {
+            text-align: left;
+            margin-left: 2%;
+            font-size: 17px;
+        }
+
+        #row1, #row2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 3%;
+        }
+
+
+        img {
+            width: 300px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            
+            
+        }
+
+
+
+        .details {
+            display: flex;
+            background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            padding: 2%;
+        }
+
+        #mai {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            button{
+                text-align: right;
+                height: 50%;
+                margin-top: 1.5%;
+                margin-right: 2%;
+                background-color: black;
+                color: white;
+                border: none;
+                font-size: 18px;
+                font-family: 'Lato';
+            }
+            #b1{
+                margin-right: 1%;
+            }
+
+            button:hover{
+                opacity: 0.7;
+            }
+        }
+
+        hr{
+            margin: 0;
+            background-color: rgb(186, 186, 186);
+            
+        }
+
+        #nav{
+            text-align: center;
+            small{
+                font-size: 18px;
+                
+                margin-right: 14px;
+                border: 1px solid rgb(186, 186, 186);
+                padding: 4px;
+                border: none;
+                font-weight: 600;
+            }
+
+            small:hover{
+                background-color: rgb(199, 199, 199);
+            }
+            
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="header">
+        <h1>THE INDIAN BULLETIN</h1>
+
+        <button id="b1">Subscribe</button>
+        <button id="b2">Sign In</button>
+
+    </div>
+
+    <div>
+        <hr style="margin-bottom: 2px;">
+        <div id="nav">
+            <small>Home</small>
+            <small>India</small>
+            <small>World</small>
+            <small>Sports</small>
+            <small>Tech</small>
+            <small>Politics</small>
+            <small>Finance</small>
+        </div>
+        <hr style="margin-bottom: 2%; margin-top: 2px;">
+    </div>
+    
+    <div id="main">
+        <div id="row1">
+            <div id="news1" class="news">
+                <div>
+                    <img src="https://images.hindustantimes.com/img/2024/08/01/550x309/MixCollage-02-Aug-2024-12-55-AM-9570_1722543052795_1722543059743.jpg">
+                    <h3 id="news1h">India at Olympics, Day 7: Manu Bhaker in action once again, Lakshya Sen in badminton quarterfinals</h3>
+                </div>
+                <p id="news1d" class="details">Manu Bhaker finished second in women's 25 pistol qualification shooting a total of 590 (294 in precision, 296 in rapid) out of a possible 600 and thus reached her third final of the Paris Olympics. Archers Ankita Bhakat and Dhiraj Bommadevara became the first Indians to reach the mixed team semi-finals. However, they couldn't go past South Korea and then lost to the USA in the bronze medal match. Lakshya Sen later became the first Indian to reach the semi-finals of men's singles badminton at the Olympics. Lakshya Sen prevailed in an intense quarterfinal clash against Chou Tien Chen of Chinese Taipei to make history at the Paris Olympics. He has become the first Indian man to reach the singles semi-final in badminton at the Olympics. Earlier, Ankita Bhakat and Dhiraj Bommadevara made history by becoming the first Indians to reach the semi-finals in mixed-team archery at the Olympics. </p>
+            </div>
+
+            <div id="news2" class="news">
+                <div>
+                    <img src="https://s.yimg.com/ny/api/res/1.2/mdwC0pLIrdEJW3qYg18TTw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2024-08/93f5b680-5369-11ef-bf9f-bfeaa08079af">
+                    <h3 id="news2h">NVIDIA’s AI team reportedly scraped YouTube, Netflix videos without permission</h3>
+                </div>
+                <p id="news2d" class="details">In the latest example of a troubling industry pattern, NVIDIA appears to have scraped troves of copyrighted content for AI training. On Monday, 404 Media’s Samantha Cole reported that the $2.4 trillion company asked workers to download videos from YouTube, Netflix and other datasets to develop commercial AI projects. The graphics card maker is among the tech companies appearing to have adopted a “move fast and break things” ethos as they race to establish dominance in this feverish, too-often-shameful AI gold rush.
+
+                    The training was reportedly to develop models for products like its Omniverse 3D world generator, self-driving car systems and “digital human” efforts.
+                    
+                    NVIDIA defended its practice in an email to Engadget. A company spokesperson said its research is “in full compliance with the letter and the spirit of copyright law” while claiming IP laws protect specific expressions “but not facts, ideas, data, or information.” The company equated the practice to a person’s right to “learn facts, ideas, data, or information from another source and use it to make their own expression.” Human, computer… what’s the difference?
+                    
+                    YouTube doesn’t appear to agree. Spokesperson Jack Malon pointed us to a Bloomberg story from April, quoting CEO Neal Mohan saying using YouTube to train AI models would be a “clear violation” of its terms. “Our previous comment still stands,” the YouTube policy communications manager wrote to Engadget.</p>
+            </div>
+
+            <div id="news3" class="news">
+                <div>
+                    <img src="https://images.livemint.com/img/2024/08/01/600x338/INFOSYS-STOCKS--0_1718870259571_1722531014309.JPG">
+                    <h3 id="news3h">After Infosys, tax authorities may issue GST notices to more IT companies for alleged tax evasion: Report</h3>
+                </div>
+                <p id="news3d" class="details">Tax authorities may issue notices to some other IT companies for alleged tax evasion related to work done by their overseas offices, a report by news agency Reuters said on Thursday, a day after Infosys was slapped with a ₹32,403 crore GST notice. IT industry body Nasscom on Thursday said the latest tax demand reflects a lack of understanding of the sector’s operating model. It also said multiple companies are facing avoidable litigation and uncertainty.</p>
+            </div>
+            slow
+
+            <div id="news1" class="news">
+                <div>
+                    <img src="https://images.hindustantimes.com/img/2024/08/06/550x309/INDIA-MARKETS-0_1651226937928_1722952552444.JPG">
+                    <h3 id="news1h">Investors lost ₹22 lakh crore in three days of market crash</h3>
+                </div>
+                <p id="news1d" class="details">Weak US jobs data caused panic of a possible recession in the US market and a sharp plunge in Japanese and other global markets played havoc at Dalal StreetInvestors' wealth eroded by a whopping ₹22 lakh crore in three days of market slump with the BSE benchmark Sensex tanking 4 per cent.In three days, the Sensex tumbled 3,274.48 points or 3.99 per cent. The massive correction came after the benchmark index hit its all-time high of 82,129.49 on August 1.Market capitalisation of BSE-listed firms tumbled ₹22,02,996.27 crore to reach ₹4,39,59,953.56 crore (USD 5.24 trillion) in three trading days.
+                    
+                    The benchmark ended 166.33 points or 0.21 per cent lower at 78,593.07 on Tuesday even after surging 1,092.68 points or 1.38 per cent in intra-day trade."Negative sentiment continued to prevail in the US and European equities which weighed on local markets as indices fell sharply towards the close on profit-taking in banking, telecom and auto shares. After surging over 1,000 points in early trade, markets steadily erased gains and slipped into the red," Prashanth Tapse, Senior VP (Research), Mehta Equities Ltd, said.
+
+                   </p>
+            </div>
+        </div>
+
+        <div id="row2">
+            <div id="news4" class="news">
+                <div>
+                    <img style="object-position: top;" src="https://imageio.forbes.com/specials-images/imageserve/66a3b74b90cb307d515e9ae2/Ryan-Reynolds-and-Hugh-Jackman-star-in--Deadpool---Wolverine--/960x0.jpg?format=jpg&width=1440">
+                    <h3 id="news4h">‘Deadpool & Wolverine’ Heads Toward $1 Billion Box Office By Third Weekend</h3>
+                </div>
+                <p id="news4d" class="details">Disney is on a roll in 2024, topping $3 billion in worldwide ticket sales as its latest Marvel Studios release Deadpool & Wolverine sits at around $850 million today and heads toward $1 billion box office by its third weekend of release.Deadpool & Wolverine should reach roughly $900 million headed into its third weekend. So, by end of business next Sunday, the Ryan Reynolds and Hugh Jackman starring blockbuster sequel from director Shawn Levy, who cowrote with Reynolds, should easily top $1 billion.
+
+                    Meanwhile, Pixar’s chart-topping Inside Out 2 continues to defy even bullish expectations, and actually managed to drop a mere 25% last weekend despite losing 17% of its screens. The sequel, from director Kelsey Mann with screenwriters Meg LeFauve and Dave Holstein, is already the highest-grossing animated film in cinema history, Pixar’s highest earner of all time, and easily the biggest film of 2024 — so far.At its present trajectory, and assuming continued strong holds but still the inevitably drop-offs, Inside Out 2 should top $1.62 billion if it stays in release long enough — which there’s every reason to expect at this point in the summer box office season.
+
+                    Disney is doing the bulk of the heavy lifting so far this summer, including Kingdom of the Planet of the Apes’ $397 million cume, Inside Out 2’s $1.55 billion, and Deadpool & Wolverine’s $850 million. Overall receipts are still way down, however.</p>
+            </div>
+
+            <div id="news5" class="news">
+                <div>
+                    <img src="https://th-i.thgim.com/public/incoming/ptutix/article68495913.ece/alternates/LANDSCAPE_1200/2024-08-07T065353Z_1676972052_RC2TA9AG3X8S_RTRMADP_3_BANGLADESH-PROTESTS.JPG">
+                    <h3 id="news5h">Bangladesh crisis Highlights: Muhammad Yunus to take oath on August 8, 2024 at 8 p.m.</h3>
+                </div>
+                <p id="news5d" class="details">An interim government headed by Nobel Laureate Muhammad Yunus will take oath in Bangladesh at 8 p.m. on Thursday, Army chief General Waker-Uz-Zaman said at a press conference on Wednesday (August 7, 2024).
+
+                    The 84-year-old microfinance pioneer will arrive at the Hazrat Shahjalal International Airport in Dhaka on an Emirates flight from Dubai on Thursday afternoon, the Yunus Center said in a press release.
+                    
+               
+                    Mr. Yunus asked the youth to be calm and get ready to build the country. “I congratulate the brave students who took the lead in making our ‘Second Victory Day’ possible and to the people for giving your total support to them. Let us make the best use of our new victory. Let us not let this slip away because of our mistakes,” he said in the statement.
+                    
+                   
+                    
+                    The Labour Appellate Tribunal on Wednesday overturned a six-month jail sentence awarded to Mr. Yunus in a case filed over alleged violation of the labour law.
+                    
+                    The Bangladesh Nationalist Party (BNP), the main Opposition party when former Prime Minister Sheikh Hasina was in power, held a rally at Naya Paltan in Dhaka, where thousands of people gathered from different parts of the country.</p>
+            </div>
+
+            <div id="news6" class="news">
+                <div>
+                    <img src="https://images.hindustantimes.com/img/2024/08/05/550x309/ANI-20240804170-0_1722793669376_1722871836905.jpg">
+                    <h3 id="news6h">Are politicians listening? Wayanad, Himachal disasters are nature's warnings</h3>
+                </div>
+                <p id="news6d" class="details">Government needs to prepare an integrated national rainfall grid that identifies vulnerable areas based on the history of landslides and monsoon water flow data. 
+
+                    A worrying pattern of an increasing number of localised but extreme rainfall events has emerged across India this monsoon season.
+                    Wayanad, Aug 04 : NDRF team conduct a search and rescue operation for the fifth consecutive day after a devastating landslide hit hilly villages triggered by heavy rainfall, in Wayanad on Sunday. 
+                    PREMIUM
+                    Wayanad, Aug 04 : NDRF team conduct a search and rescue operation for the fifth consecutive day after a devastating landslide hit hilly villages triggered by heavy rainfall, in Wayanad on Sunday. 
+                    
+                    One obvious reason is human-induced climate change, triggered by increasing emissions. Another, not so obvious,</p>
+            </div>
+
+            <div id="news1" class="news">
+                <div>
+                    <img src="https://th-i.thgim.com/public/incoming/j6hytb/article68495539.ece/alternates/LANDSCAPE_1200/2024-08-06T180721Z_1495837181_RC2IA9AN19NX_RTRMADP_3_GOOGLE-USA.JPG">
+                    <h3 id="news1h"> What is the Google ‘monopoly’ antitrust case and how does it affect consumers?</h3>
+                </div>
+                <p id="news1d" class="details">IGoogle lost a major antitrust case brought against it by the U.S. Department of Justice that sought to establish that the tech giant had a monopoly in the web search and advertising sectors. The 10-week-long case that took place last year saw high-profile tech leaders like Google CEO Sundar Pichai and Microsoft CEO Satya Nadella debating the dominance of the Google search engine and arguing whether this was due to the company’s merits or its unfair practices. In the end, U.S. District Judge Amit Mehta ruled, per a court record dated August 5, 2024, that Google was a monopolist.</p>
+            </div>
+        </div>
+        
+    </div>
+    <script src="news.js">
+        
+        $(document).ready(function() {
+            $("p").hide();
+
+            $('.news').click(function() {
+                if ($(this).children('p').is(":hidden")) {
+                    $(this).siblings().hide("slow");
+                    $(this).children('p').show();
+                } else {
+                    $(this).siblings().show("slow");
+                    $(this).children('p').hide("slow");
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

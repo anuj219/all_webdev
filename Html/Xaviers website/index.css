@@ -1,0 +1,46 @@
+*{   /*star stands for universal selector*/
+    margin: 0;
+    font-size: 10px;
+}
+nav{   /*defines a section for links*/
+    background-color: maroon;
+}
+img{
+    height:5rem;
+}
+ul{
+    /*The main idea behind the flex layout is to give the container the ability to alter its items’ width/height
+     (and order) to best fill the available space (mostly to accommodate all kinds of display devices and screen sizes)*/
+    display: flex;  
+    flex-direction: row;
+    list-style: none;
+    padding : 100px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+}
+li{
+    padding-right: 2rem;
+}
+
+li:last-child{    /*Selects last element of List*/
+    padding-right: 0;
+}
+h1{
+    font-size: 6.4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+p{
+    font-size: 1.8rem;
+}
+article{
+    text-align: center;
+}
+.container{
+    /* . stands for class selector */
+    padding: 4rem 10rem;
+}

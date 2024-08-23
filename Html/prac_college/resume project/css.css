@@ -1,0 +1,98 @@
+    .body{
+        background-color: black;
+    }
+    #main_head {
+        text-align: center;
+        background-color: aqua;
+        color: black;
+        border-radius: 10px;
+    }
+
+    ul {
+        background-color: rgb(10, 5, 87);
+        border-radius: 20px;
+        list-style: none;
+        width: 100%;
+    }
+
+    div ul li {
+        /* why is this property also applying to the info and header class ul */
+        display: inline-block;
+        padding: 3px;
+        position: relative;
+        color: rgb(16, 96, 96);
+        margin: 10px;
+        text-transform: uppercase;
+    }
+
+
+    /* div ul li img {
+        position: relative;
+        top: 10px;
+        width: 45pt;
+        clear: left;
+        padding-right: 29px;
+    } */
+
+
+    .navbar-link {
+        text-decoration: none;
+        color: aqua;
+        /* position: relative;
+        left: 250px; */
+    }
+
+    /* if i apply the position property to above navbar-link  ... the text moves but the links associated with them dont. But if i apply them to nav*/
+    .navbar {
+        position: relative;
+        left: 190px;
+        bottom: 10px;
+    }
+    
+
+
+    div ul li::after {
+        /* the below code is working on the sliding line, 
+        not for the list items */
+        content: "";
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        /*absolute will take the sliding lines out of the flow of webpage 
+        and fix the lines relative to the ancestor(here li)*/
+        left: 0;
+        bottom: -01px;
+        transition: 0.4s;
+    }
+
+    div ul li:hover:after {
+        width: 100%;
+        /* means that the moving line below navbar elements will occupy 100% of space(after you hover over ) relative to the elements themselves */
+    }
+
+    .navbar-link:hover{
+        color: rgb(126, 155, 155);
+    }
+
+    .wadapav-img {
+        position: relative;
+        top: 10px;
+        left: 20px;
+        margin: 5px;
+        width: 45pt;
+        padding-right: 29px;
+    }
+    .yt{
+        position: relative;
+        top: 17px;
+        width: 40pt;
+        padding-right: 29px;  
+    }
+
+
+
+    /* absoulte position : The element with position absolute;
+     is positioned relative to its closest positioned ancestor.
+     Elements with position: absolute; do not reserve space in the normal flow.
+     Other elements can overlap them. */

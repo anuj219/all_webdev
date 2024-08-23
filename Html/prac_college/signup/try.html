@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* error styling */
+        .error {
+            border: 0.2vw solid red;
+            border-radius: 2px;
+        }
+
+        /* correct styling */
+        .correct {
+            border: 0.2vw solid rgb(57, 245, 40);
+            border-radius: 2px;
+        }
+
+        /* styling of the FA font awesomes */
+        .fa-user,
+        .fa-key {
+            color: rgb(205, 134, 134);
+        }
+
+        #eyes_pass{
+            position: absolute;
+            right: 556px;
+            top: 116px;
+            color: #cd8686;
+        }
+        #eyes_conf{
+            position: absolute;
+            right: 556px;
+            top: 194px;
+            color: #cd8686;            
+        }
+
+        /* styling for main */
+        .main {
+            background-color: rgb(49, 16, 16);
+            width: 25%;
+            margin: auto;
+            padding: 15px;
+            border: 2px solid rgb(32, 189, 189);
+            border-radius: 5%;
+        }
+
+        /* Styling for the content inside main */
+        #sub {
+            margin-left: 10px;
+            padding: 10px;
+            border-radius: 30px;
+            width: 90%;
+            background-color: rgb(205, 134, 134);
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease; /* Add transition property */
+
+        }
+        #sub:hover{
+            background-color: rgb(253, 253, 253);
+            color: rgb(109, 72, 72);
+        }
+
+        #name,
+        #pass,
+        #cpass {
+            padding: 10px;
+            margin: auto;
+            border-radius: 30px;
+            position: absolute;
+            transition: background-color 0.5s ease;
+        }
+
+        #name:hover,
+        #pass:hover,
+        #cpass:hover {
+            background-color: rgb(220, 188, 188);
+            /* Optional: Add a semi-transparent background color */
+            border-radius: 50px;
+            /* Optional: Add rounded corners */
+            padding: 11px;
+            /* Optional: Add some padding */
+        }
+
+        .togg_pass {
+            position: relative;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="main">
+            <div class="input">
+                <label for="name"><i class="fas fa-user"></i></label>
+                <input type="text" name="name" id="name" placeholder="Username or Email" required>
+            </div>
+            <br>
+            <div class="input1">
+                <label for="pass"><i class="fas fa-key"></i></label>
+                <button><input type="password" name="password" id="pass" onclick="check_name()" placeholder="Enter Password"><i id="eyes_pass" class="fas fa-eye" onclick="toggle()"></i></button>
+            </div>
+            <br>
+            <div class="input1">
+                <label for="cpass"><i class="fas fa-key"></i></label>
+                <input type="password" name="confirm_password" id="cpass" onclick="check_pattern()"
+                    placeholder="Confirm Password">
+                <i id="eyes_conf" class="fas fa-eye" onclick="toggle_conf()"></i>
+
+            </div>
+            <br>
+            <div class="input1">
+                <input type="submit" id="sub" onclick="return check_password()" value="SIGN UP">
+            </div>
+        </div>
+    </form>
+
+
+
+    <!-- It was not loading properly when written inside head -->
+    <script>
+        var pass = document.getElementById('pass');
+        var conf_pass = document.getElementById('cpass');
+        var name1 = document.getElementById('name');
+
+        // function to check pattern matching for password
+        function check_pattern() {
+            //var pattern = /^230[5-6]{1}0[0-9]{2}$/;
+            var pattern = /^@\w+@\w+$|^\w*@\w*$/;
+            if (!pattern.test(pass.value.trim())) {
+                pass.classList.remove('correct');
+                pass.classList.add('error');
+                return false;
+            }
+            else {
+                pass.classList.add('correct');
+                pass.classList.remove('error');
+            }
+        };
+
+        // function to check if password and confirmed passwords match
+        function check_password() {
+            if (pass.value.trim() != conf_pass.value.trim()) {
+                alert("Passwords dont match");
+                return false;
+            }
+        };
+
+        //function to check user name
+        function check_name() {
+            var pattern = /^[a-z0-9._]{4,}$/;
+            if (!pattern.test(name1.value.trim())) {
+                name1.classList.remove('correct');
+                name1.classList.add('error');
+                return false;
+            }
+            else {
+                name1.classList.remove('error');
+                name1.classList.add('correct');
+                //name1.classList.replace('error','correct')  -- this also works fine, but if user entered right input in first go .. it wont find an error class to replace ... so wont work then
+            }
+        }
+
+        // function to toggle visibility of password
+        function toggle() {
+            var eyes = document.getElementById('eyes_pass');
+            if (pass.type == 'password') {
+                pass.type = 'text';
+                // if its on type text --> show slashed eye icon (to give button for changing type back to password)
+                eyes.classList.remove('fa-eye');
+                eyes.classList.add('fa-eye-slash');
+
+            }
+            else {
+                pass.type = 'password';
+                // if its on type password --> show eye icon (to give button for changing type to text)
+                eyes.classList.add('fa-eye');
+                eyes.classList.remove('fa-eye-slash');
+
+            }
+        };
+
+        // function to toggle visibility of confirm password
+        function toggle_conf() {
+            var eyes = document.getElementById('eyes_conf');
+            if (conf_pass.type == 'password') {
+                conf_pass.type = 'text';
+                eyes.classList.remove('fa-eye');
+                eyes.classList.add('fa-eye-slash');
+            }
+            else {
+                conf_pass.type = 'password';
+                eyes.classList.add('fa-eye');
+                eyes.classList.remove('fa-eye-slash');
+            }
+        };
+    </script>
+</body>
+
+</html>

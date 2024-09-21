@@ -7,17 +7,16 @@
     <title>Tea Stall</title>
 
 
-
     <script>
         function endprog() {
             document.getElementById('select').disabled = true;
             document.getElementById('no').disabled = true;
             document.getElementById('butt2').disabled = true;
             document.getElementsByClassName('choicee').disabled = true;
-
         }
         function startprog() {
             document.getElementById('select').disabled = false;
+            // document.getElementById('select').style.disabled = false; wrong as disabled property is not css
             document.getElementById('no').disabled = false;
             document.getElementById('butt2').disabled = false;
 
@@ -92,7 +91,6 @@
 
             if (pattern.test(uid.value.trim())) {
                 flag = true;
-
                 startprog();            // if valid then let user continue
 
                 if (uid.value.substring(2, 4) === "05") {

@@ -58,7 +58,7 @@
             justify-content: center;
 
             ul {
-                /* this will properly adjust the navbar withing the first ul i.e it will apply on the li tag inside ul */
+                /* this will properly adjust the navbar withinn the first ul i.e it will apply on the li tag inside ul */
                 /* for alignment , parent ul will be considered */
                 display: flex;
                 flex-direction: row;

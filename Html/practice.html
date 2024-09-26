@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: cursive;
+        }
+
+        .head {
+            display: inline-block;
+        }
+
+        .head2 {
+            display: inline;
+        }
+
+        .reveal-password input[type="password"] {
+           font-family: 'Courier New', Courier, monospace; 
+        }
+
+        .reveal-password input[type="password"]:hover {
+            font-family: cursive;
+        }
+        .hell{
+            display: inline-block; 
+            width: 100%;  
+        }
+        .child{ 
+            display: inline-block;
+            margin: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="head">Hello there</h1>
+    <h2 class="head2">Anuj</h2>
+    <h3>meow</h3>
+
+    <form action="" autocomplete="on">
+        <input type="text" name="" id="">
+        <div class="reveal-password">
+            <input type="password">
+        </div>
+        hello : <input type="radio" name="t1" id="aa" checked>
+        sdvse : <input type="radio" name="t1" id="aa"> <br> <br>
+        <input type="file" name="" id="">
+
+        <input type="button">
+        <button type="button"></button>
+
+        <select name="anuj" id="1" size="1">
+            <option value="ok">OK</option>
+            <option value="no">NO</option>
+            <option value="yes" selected>YES</option>
+        </select>
+    </form>
+
+    <div class="hell">
+        <div class="child"> Hello </div>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- 
+general notes : 
+>> div > ul    and div ul
+    differnece is the first one selects the IMMEDIATE child, whereas the the second one selects any descendent of div (can be at any level inside the div)
+
+>> diff between <link> and <a>
+    <link> : connection between document  and external resources associated with page
+    <a> : any interaction with it , takes user to external URL or local file too
+
+>> multiple in select helps you select multiple options (but by pressign ctrl and selecting only)
+>> size in select helps you to display more than 1 options at a time
+
+>> input type button vs <button>
+    button is more flexible as it also allows images, texts etc whereas inp type only allows label content inside the btn
+    baki almost same che
+
+    in input text : Maxlength: dictates the maximum number of characters that the user can see and type;
+>> .value can only used on form elements
+
+>> BOOTSTRAP : Bootstrap is a popular front-end framework that simplifies web development by providing pre-styled
+    components and responsive layouts. 
+    Bootstrap uses a grid system based on rows and columns. 
+    The grid system divides the screen into 12 equal columns (or column units).
+    You can specify how many columns each element should occupy based on the screen size (using responsive breakpoints).
+
+
+>> Viewport stands for the device screen on which it will be rendered   || content is the whitespace  || 
+    initial-scale which will permit 	the user to zoom
+     Meta charset=“utf-8” is an HTML tag that makes it possible to use emojis and other characters that aren't in the traditional ASCII character set on your webpage. If you don't use the tag, then you will need to look up HTML entities to manually insert an emoji or other character.
+
+
+>> innerHTML         vs         innerText     vs        textContent     
+   while reading : 
+        - The innerHTML property returns the full content including all the HTML tags
+        - The innerText property returns the content as RENDERED ON THE SCREEN. It ignores all the HTML tags. But  
+            considers style code (like agar kisi ko display none kiya rehta, to innerText wo nahi read karta)
+        - The textContent property returns the content AS IT, IN THE HTML MARKUP. Like innerText, it also ignores 
+          the HTML tags. But it doesn't consider styles, (so display none wala element bhi textContent karta read)
+    while writing to the HTML doc : 
+        - . The innerHTML property recognizes the HTML tags and formats the content accordingly
+        - innerText ignores the HTML tags and prints them on screen as part of the text. But it still recognises 
+            formatting like line-breaks and whitespaces (styling).
+        - textContent property will ignore HTML markup and it will also ignore things like line breaks and 
+            whitespaces too.
+
+>> table - you can't specify
+           spacing(margin) or padding for individual cells.
+           so use, Cell Spacing- 
+                Defines the space between cells.
+            Cell Padding   (on the table tag)
+
+            rowspan and colspan is for td or th ... not tr
+            they stand for number of rows or cols one cell occupies     
+
+
+>>  ^:
+        Denotes the start of the string. The pattern will match only if it begins at the start of the input.            
+    [^123] means any CHARACTER other than numbers 1,2,3 are allowed
+    \ -> used to escape meta characters, so as to use them by their literal meaning
+
+
+>> XML : A language based on simple and platform
+    independent rules for processing and
+    displaying textual information in a structured
+    way.
+Structured language
+Platform independent : XML is not tied to any specific operating system or hardware. 
+Open standard : Anyone can implement XML parsers and generators.
+Language independent
+Web enabled : XML is commonly used for data exchange over the web. 
+Extensible. : You can create custom tags (elements) to represent specific data.
+
+
+>> An XML parser converts an XML document into an XML DOM
+    object - which can then be manipulated with JavaScript.
+
+
+>> JavaScript code often behaves differently across different browsers. jQuery handles these inconsistencies, 
+    making your code work uniformly across all browsers.
+    jQuery allows you to chain multiple methods together in a single line, which can make your code more concise and readable.
+    .querySelector("./#") -> helps to select elements with any type of selector
+
+>>CDN : A Content Delivery Network (CDN) is a system of distributed servers (network) that deliver content to users based on their geographic location. The goal of a CDN is to serve content to end-users with high availability and high performance by distributing the content across multiple servers that are geographically closer to the user.
+When a user requests content (like a web page, image, or video), the CDN will deliver the content from the server that is closest to the user’s location.
+reduce latency and increase speed of delivery, security (reduce attacks by distributing load accross multiple servers), global reach
+complex management than og servers, only effective for static content(imgs,css,js files)
+
+>> API :  APIs allow applications to access specific functionalities or data from a service.
+ eg : A payment gateway API allows an e-commerce website to process credit card payments.
+
+
+>> XAMPP is an acronym that stands for Cross-Platform, Apache, MySQL,>
+php, and Perl.
+>> PHP is a server-side scripting language, meaning it runs on the server before the HTML is sent to the client's browser.
+ PHP scripts are executed on the server
+ PHP supports many databases
+ PHP is an open source software
+>> echo is one where you can have multiple strings and concatenate strings , wont return you a number
+    // print_r cannot concatenate, but can help you return a number
+    // both are used for printing
+>> $_POST/_GET/_REQUEST is global associative array
+    $_POST is a global associative array that holds form data submitted via POST.
+    The keys in $_POST correspond to the 'name' attributes, not id etc of the form fields. Thus, the attriubte 'name' is important here
+    $name = $_POST['txtname'];
+
+
+>>  Ajax - asynchronous javascript and xml
+        Asynchronous Operations: AJAX allows the web application to request data (in this case, an XML file) from the 
+        server in the background without interfering with the user interface. This means the user can continue interacting 
+        with the page while the data is being fetched.
+        Dynamic Content: After the data is retrieved, it can be used to dynamically update parts of the web page without 
+        needing a full page reload. This makes the user experience smoother and faster.
+        Reduced Server Load: By loading only the necessary data and updating only parts of the page, AJAX can reduce the 
+        amount of data that needs to be transferred between the client and server, thereby reducing server load.
+
+>>.find() : used to get the descendants of each element in the current set of matched elements,   ---- Jquery object
+                // filtered by a selector, jQuery object, or element34.
+>> .each(function () { ... }): For each <movie> element found, execute the provided function.     ---- Jquery object
+                .each() requires a function because it needs instructions on what to do with each element it processes.
+
+>> forEach   method available on JavaScript ARRAYS only that executes a provided function once for each array element.  ----- JavaScript
+The arrow function syntax i => { ... } is equivalent to a function expression function(i) { ... }
+        eg : $(xml).find('movie').toArray().forEach(i => {
+            const title = $(i).find('title').text(); }        
+>> $ in Jquery stands for Jquery
+
+>> The DOM (Document Object Model) is a programming interface for web documents. It represents a web page as a structured tree of objects and nodes. Each node corresponds to an element (like a tag) in the HTML or XML document.
+You can manipulate the DOM using JavaScript. Change content, style, or even add/remove elements!
+
+>> hover is not an event type recognized by the DOM's addEventListener method. Instead, you must use mouseover, mouseenter, mouseout, or mouseleave to achieve similar behavior.   Hover is Jquery method
+
+>> flex-grow ke bina, cell only takes as much plac as the content needs ... so if one cell has more content, it would have occupied more space
+
+>>    const today = new Date();
+      const currentDay = today.getDay();   -- (1,2,3,4,5,6,7)
+      const currentTime = today.getHours();   -- (24hr format 1,2,3...23)
+      .toDateString(); // Converts the date to a string (e.g., "Wed Aug 15 2024")
+      .toLocaleTimeString(); // Converts time to a string (e.g., "10:30:00 AM")
+
+>> $('#element').toggle(400); // Toggle visibility with a 400ms duration
+    $('#element').toggleClass('active'); // Toggle the 'active' class ...  If the class is present, it is removed; if it is not present, it is added.
+>> meta tags provide information about a page's content to search engines and browsers, helping them understand the page and display it correctly: 
+-->
+php

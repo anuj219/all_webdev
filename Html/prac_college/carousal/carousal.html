@@ -29,6 +29,10 @@ Practical 5/7/24 -->
         .my2 {
             background-color: yellow
         }
+        .itemm{
+            height: 50%;
+            width: 50% !important;
+        }
     </style>
 
 
@@ -41,6 +45,7 @@ Practical 5/7/24 -->
         <!-- container class gives padding whereas container fluid removes the padding from both sides -->
         <div class="row">
             <div class="col-sm-5">
+                <!-- The columns will adjust their width based on the screen size (thanks to the sm breakpoint). -->
                 <p class="my1"> this is 5col </p>
             </div>
             <div class="col-sm-7">
@@ -48,23 +53,26 @@ Practical 5/7/24 -->
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-sm-5">
                 <h3 style="text-align: center; background-color: rgb(0, 145, 255);"> Rohit Sharma </h3>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <div id="carouselExample" class="carousel slide">
+            <div class="col-">
+                <!-- The carousel is initialized with the ID carouselExample. -->
+                <div id="carouselExample" class="carousel" >
                     <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA-Olg1SZlyLTdcuIVmEwXSgIdIc12B-DkA&s" height="50%" width="50%" class="container d-block itemm" alt="img of Rohit">
+                            <!-- had to give container class to this as we wanted it to have padding and margin and come in middle
+                             The .d-block class sets the display property of an element to block. -->
+                        </div>
                         <div class="carousel-item active">
-                            <img src="hitman.jpeg" height="30%" class="container d-block" alt="img of Rohit">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNgEnyCQM87bbJLFDup8aSeMIaC_mY89Czuw&s" height="50%" width="30%" class="container d-block itemm" alt="img of Rohit">
                         </div>
                         <div class="carousel-item">
-                            <img src="hitman1.jpeg" height="50%" width="30%" class="container d-block" alt="img of Rohit">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="hitman2.jpeg" height="30%" width="60%" class="container d-block" alt="img of Rohit">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXdJVA_k-qPpaIUEZkB7txuwfikxEY7AHfFA&s" height="30%" width="60%" class="container d-block itemm" alt="img of Rohit">
                         </div>
                     </div>
                     <!-- carousal inner ends -->
